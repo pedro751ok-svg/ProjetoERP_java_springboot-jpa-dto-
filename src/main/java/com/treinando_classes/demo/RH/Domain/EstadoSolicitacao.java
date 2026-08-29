@@ -4,7 +4,7 @@ import com.treinando_classes.demo.RH.regras_Enums.RegrasDeEnums;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 public class EstadoSolicitacao {
-    public RegrasDeEnums.status Atestados(LocalDate DataInicio, LocalDate DataFim) {
+    public static   RegrasDeEnums.status Atestados(LocalDate DataInicio, LocalDate DataFim) {
         long days = ChronoUnit.DAYS.between(DataInicio, DataFim) + 1;
         if (days > 15) {
             return RegrasDeEnums.status.ENCAMINHADO;
@@ -12,7 +12,7 @@ public class EstadoSolicitacao {
         return RegrasDeEnums.status.PENDENTE;
     }
 
-    public boolean PeriodoDeFeriasValido(long dias, int periodotirado) {
+    public static boolean PeriodoDeFeriasValido(long dias, int periodotirado) {
         if (dias < 5) {
             return false;
         }
@@ -22,7 +22,7 @@ public class EstadoSolicitacao {
         return true;
     }
 
-    public RegrasDeEnums.status ferias(LocalDate DataInicio, LocalDate DataFim, int periodotirado) {
+    public static RegrasDeEnums.status ferias(LocalDate DataInicio, LocalDate DataFim, int periodotirado) {
         long days = ChronoUnit.DAYS.between(DataInicio, DataFim) + 1;
 
         if (PeriodoDeFeriasValido(days, periodotirado)) {
@@ -34,7 +34,7 @@ public class EstadoSolicitacao {
         return RegrasDeEnums.status.PENDENTE;
     }
 
-    public RegrasDeEnums.status Afastamentos(LocalDate DataInicio, LocalDate DataFim) {
+    public static RegrasDeEnums.status Afastamentos(LocalDate DataInicio, LocalDate DataFim) {
         if (DataInicio.isAfter(DataFim)) {
             throw new IllegalArgumentException("a data de inicio nao pode ser maior que a data de fim");
         }

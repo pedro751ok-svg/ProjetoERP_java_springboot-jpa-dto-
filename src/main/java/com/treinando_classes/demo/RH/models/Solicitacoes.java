@@ -19,7 +19,7 @@ public class Solicitacoes {
 
     @ManyToOne
     @JoinColumn(name = "funcionario")
-    private Funcionario funcionario;
+    private Funcionario id_funcionario;
 
     @ManyToOne
     @JoinColumn(name = "aceita_por_id", referencedColumnName = "id")

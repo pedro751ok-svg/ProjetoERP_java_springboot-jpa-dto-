@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 import com.treinando_classes.demo.RH.regras_Enums.RegrasDeEnums;
 import com.treinando_classes.demo.RH.repositories.CadastroRepository;
 import com.treinando_classes.demo.RH.Domain.Validarcpf;
-
+import com.treinando_classes.demo.EnumsDaRaiz.EnumsParaUsoGeral;
 @Service
 public class Cadastros {
 
@@ -15,7 +15,7 @@ public class Cadastros {
 
     }
     // salvando cadastros na tabela
-    public Funcionario funcionario(String nome, String cpf, String email, RegrasDeEnums.setor setor, RegrasDeEnums.Cargo role){
+    public Funcionario funcionario(String nome, String cpf, String email, EnumsParaUsoGeral.Setor setor ){
         Validarcpf validador = new Validarcpf();
         if(!validador.validar(cpf)) {
             throw new IllegalArgumentException("cpf invalido");
@@ -32,7 +32,6 @@ public class Cadastros {
         .cpf(cpf)
         .email(email)
         .setor(setor)
-        .role(role)
         .build();
 
         return repository.save(novo_funcionario);
