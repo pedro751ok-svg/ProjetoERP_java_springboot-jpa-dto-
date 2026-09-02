@@ -1,10 +1,11 @@
 package com.treinando_classes.demo.RH.services;
 import com.treinando_classes.demo.Shared.Empresa;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 import com.treinando_classes.demo.RH.Domain.ValidarCnpj;
 import com.treinando_classes.demo.RH.repositories.EmpresaRepository;
 @Service
-
+@Transactional
 public class CadastroDeEmpresas {
     private final EmpresaRepository repository;
     public CadastroDeEmpresas(EmpresaRepository repository){

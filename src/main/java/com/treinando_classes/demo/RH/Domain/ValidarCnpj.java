@@ -18,7 +18,7 @@ public class ValidarCnpj {
 //primeiro digito
             int soma = 0;
             for (int i = 0; i < 12; i++) {
-                soma += Character.getNumericValue(cnpj.charAt(i) * pesos_1[i]);
+                soma += Character.getNumericValue(cnpj.charAt(i)) * pesos_1[i];
             }
             int resto = soma % 11;
             int digito1 = resto < 2 ? 0 : 11 - resto;
@@ -27,7 +27,7 @@ public class ValidarCnpj {
             soma = 0;
 
             for (int i = 0; i < 13; i++) {
-                soma += Character.getNumericValue((cnpj.charAt(i) * pesos_2[i]));
+                soma += Character.getNumericValue(cnpj.charAt(i)) * pesos_2[i];
             }
             resto = soma % 11;
             int digito2 = resto < 2 ? 0 : 11 - resto;

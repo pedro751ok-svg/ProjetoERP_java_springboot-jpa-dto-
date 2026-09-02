@@ -17,7 +17,7 @@ public class EstadoSolicitacao {
             return false;
         }
         if (periodotirado == 0 && dias < 14) {
-            return true;
+            return false;
         }
         return true;
     }

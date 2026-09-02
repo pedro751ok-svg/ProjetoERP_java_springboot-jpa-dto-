@@ -32,7 +32,7 @@ public class Solicitacoes {
     @JoinColumn(name = "rejeitado_por_id", referencedColumnName = "id")
     private Funcionario rejeitado_por;
 
-    private LocalDateTime DataIncio;
+    private LocalDateTime DataInicio;
     private LocalDateTime DataFim;
 
     private LocalDateTime CriadoEm;

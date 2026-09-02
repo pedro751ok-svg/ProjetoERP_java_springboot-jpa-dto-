@@ -10,11 +10,11 @@ import java.time.LocalDate;
 import java.util.Optional;
 
 @Service
-public class Ferias {
+public class FeriasValidar {
 
     private final SolicitacoesRepository solicitacoesRepository;
 
-    public Ferias(SolicitacoesRepository solicitacoesRepository) {
+    public FeriasValidar(SolicitacoesRepository solicitacoesRepository) {
         this.solicitacoesRepository = solicitacoesRepository;
     }
 
@@ -30,8 +30,9 @@ public class Ferias {
                 .findFirstByIdFuncionarioAndStatusAndDataInicioLessThanEqualAndDataFimGreaterThanEqual(
                         idFuncionario,
                         RegrasDeEnums.status.APROVADO,
-                        dataFim,
-                        dataInicio
+                        dataInicio,
+                        dataFim
+
                 );
 
         if (ferias_existentes.isPresent()) {

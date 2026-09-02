@@ -1,9 +1,6 @@
 package com.treinando_classes.demo.RH.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 import com.treinando_classes.demo.RH.regras_Enums.RegrasDeEnums;
 
@@ -15,6 +12,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Builder
 @Table(name = "tipo_de_solicitacao")
+@Entity
 public class TipodeSolicitacao {
     @GeneratedValue
     @Id

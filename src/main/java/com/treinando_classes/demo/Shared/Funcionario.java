@@ -33,5 +33,11 @@ public class Funcionario {
     private EnumsParaUsoGeral.Setor setor;
 
     @Column(nullable = false)
+    private String endereço;
+
+    @Column(nullable = false)
+    private String telefone;
+
+    @Column(nullable = false)
     private java.time.LocalDate data_admissao;
 }

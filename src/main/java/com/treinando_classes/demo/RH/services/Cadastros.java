@@ -1,11 +1,13 @@
 package com.treinando_classes.demo.RH.services;
 import com.treinando_classes.demo.Shared.Funcionario;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 import com.treinando_classes.demo.RH.regras_Enums.RegrasDeEnums;
 import com.treinando_classes.demo.RH.repositories.CadastroRepository;
 import com.treinando_classes.demo.RH.Domain.Validarcpf;
 import com.treinando_classes.demo.EnumsDaRaiz.EnumsParaUsoGeral;
 @Service
+@Transactional
 public class Cadastros {
 
     private final CadastroRepository repository;
