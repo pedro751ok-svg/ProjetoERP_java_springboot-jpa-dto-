@@ -18,7 +18,7 @@ public class FeriasValidar {
         this.solicitacoesRepository = solicitacoesRepository;
     }
 
-    public void Validar(LocalDate dataInicio, LocalDate dataFim, int periodo_tirado, Long idFuncionario) {
+    public void Validar(LocalDate dataInicio, LocalDate dataFim, int periodo_tirado, Long idFuncionario, long id_tipo) {
 
         RegrasDeEnums.status resultado = EstadoSolicitacao.ferias(dataInicio, dataFim, periodo_tirado);
 
@@ -27,8 +27,9 @@ public class FeriasValidar {
         }
 
         Optional<Solicitacoes> ferias_existentes = solicitacoesRepository
-                .findFirstByIdFuncionarioAndStatusAndDataInicioLessThanEqualAndDataFimGreaterThanEqual(
+                .findFirstById_funcionario_IdAndId_tipo_IdAndStatusAndDataInicioAndDataFim(
                         idFuncionario,
+                        id_tipo,
                         RegrasDeEnums.status.APROVADO,
                         dataInicio,
                         dataFim

@@ -3,7 +3,9 @@ package com.treinando_classes.demo.RH.models;
 import jakarta.persistence.*;
 import lombok.*;
 import com.treinando_classes.demo.RH.regras_Enums.RegrasDeEnums;
+import com.treinando_classes.demo.Shared.Funcionario;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Getter
@@ -18,6 +20,9 @@ public class TipodeSolicitacao {
     @Id
     private long id;
 
+    @ManyToOne
+    @JoinColumn(name = "id_funcuionario" , referencedColumnName = "id")
+    private  Funcionario funcionario_id;
     @Column
     private RegrasDeEnums.MeioDeAfastamento tipo;
 
@@ -25,6 +30,6 @@ public class TipodeSolicitacao {
     private String descricao;
 
     @Column
-    private Date data_emissao;
+    private LocalDate data_emissao;
 
 }

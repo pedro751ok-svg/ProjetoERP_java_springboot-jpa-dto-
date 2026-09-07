@@ -16,15 +16,16 @@ public class AtestadoValidar {
     public AtestadoValidar(SolicitacoesRepository solicitacoesRepository) {
         this.solicitacoesRepository = solicitacoesRepository;
     }
-    public void validar(LocalDate data_inicio , LocalDate data_fim, long idFuncionario){
+    public void validar(LocalDate data_inicio , LocalDate data_fim, long idFuncionario, long id_tipo){
         RegrasDeEnums.status resultado = EstadoSolicitacao.Atestados(data_inicio, data_fim);
 
         if(resultado != RegrasDeEnums.status.PENDENTE){
             throw new IllegalArgumentException("regras de status violada" + resultado );
         }
         Optional<Solicitacoes> atestado_existentes = solicitacoesRepository
-                .findFirstByIdFuncionarioAndStatusAndDataInicioLessThanEqualAndDataFimGreaterThanEqual(
+                .findFirstById_funcionario_IdAndId_tipo_IdAndStatusAndDataInicioAndDataFim(
                         idFuncionario,
+                        id_tipo,
                         RegrasDeEnums.status.APROVADO,
                         data_inicio,
                         data_fim

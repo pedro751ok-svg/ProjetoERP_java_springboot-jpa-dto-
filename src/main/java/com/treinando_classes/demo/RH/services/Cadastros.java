@@ -22,11 +22,11 @@ public class Cadastros {
         if(!validador.validar(cpf)) {
             throw new IllegalArgumentException("cpf invalido");
         }
-        if (repository.existByCpf(cpf)){
+        if (repository.existsByCpf(cpf)){
                 throw new IllegalArgumentException("funcionario com esse cpf ja existe");
         }
 
-        if(repository.existByEmail(email)){
+        if(repository.existsByEmail(email)){
             throw new IllegalArgumentException("funcionario com esse email ja existe");
         }
         String senha_criptografada = criptografiaDeSenhas.gerar_hash(senha);

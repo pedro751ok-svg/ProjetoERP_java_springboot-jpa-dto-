@@ -16,14 +16,15 @@ public class AfastamentoValidar {
     public AfastamentoValidar(SolicitacoesRepository  solicitacoesrepository){
         this.solicitacoesRepository = solicitacoesrepository;
     }
-    public void validar(LocalDate data_incio , LocalDate data_fim, long IdFuncionario){
+    public void validar(LocalDate data_incio , LocalDate data_fim, long IdFuncionario,long  id_tipo){
         RegrasDeEnums.status resultado = EstadoSolicitacao.Afastamentos(data_incio,data_fim);
         if(resultado != RegrasDeEnums.status.PENDENTE){
             throw new IllegalArgumentException("regra de status violada" + resultado);
         }
         Optional<Solicitacoes> afastamentos_exixstentes = solicitacoesRepository
-                .findFirstByIdFuncionarioAndStatusAndDataInicioLessThanEqualAndDataFimGreaterThanEqual(
+                .findFirstById_funcionario_IdAndId_tipo_IdAndStatusAndDataInicioAndDataFim(
                         IdFuncionario,
+                        id_tipo,
                         RegrasDeEnums.status.APROVADO,
                         data_incio,
                         data_fim
