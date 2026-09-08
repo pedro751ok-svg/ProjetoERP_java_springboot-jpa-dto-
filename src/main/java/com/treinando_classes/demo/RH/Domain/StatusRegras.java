@@ -17,4 +17,5 @@ public class StatusRegras {
         }
         return  RegrasDeEnums.status.PENDENTE;
     }
+
 }

@@ -18,10 +18,10 @@ public class Login {
     }
 
     public Funcionario funcionario(String cpf, String senhaDigitada) {
-        Optional<Funcionario> cadastro_registrado = repository
-                .findFirstByCpf(
-                        cpf
-                        );
+
+        Optional<Funcionario> cadastro_registrado = repository.findFirstByCpf(
+                cpf
+        );
         if(cadastro_registrado.isEmpty()){
             throw new IllegalArgumentException("cpf ou senha nao existe, tente novamente");
 

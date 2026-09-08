@@ -15,7 +15,7 @@ public class Afastamento{
     @Id
     private long id;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "id_solicitacoes")
     private Solicitacoes id_solicitacoes;
 

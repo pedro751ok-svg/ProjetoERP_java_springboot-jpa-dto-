@@ -14,7 +14,7 @@ public class Atestado {
     @Id
     private long id;
 
-     @ManyToOne
+     @OneToOne
      @JoinColumn(name = "solicitacao_id")
      private Solicitacoes solicitacao_id;
 
