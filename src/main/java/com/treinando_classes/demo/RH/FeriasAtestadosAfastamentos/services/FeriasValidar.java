@@ -1,7 +1,7 @@
-package com.treinando_classes.demo.RH.services;
+package com.treinando_classes.demo.RH.FeriasAtestadosAfastamentos.services;
 
-import com.treinando_classes.demo.RH.models.Solicitacoes;
-import com.treinando_classes.demo.RH.Domain.EstadoSolicitacao;
+import com.treinando_classes.demo.RH.FeriasAtestadosAfastamentos.models.Solicitacoes;
+import com.treinando_classes.demo.RH.FeriasAtestadosAfastamentos.Domain.EstadoSolicitacao;
 import com.treinando_classes.demo.RH.regras_Enums.RegrasDeEnums;
 import com.treinando_classes.demo.RH.repositories.SolicitacoesRepository;
 import org.springframework.stereotype.Service;

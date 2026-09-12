@@ -1,4 +1,4 @@
-package com.treinando_classes.demo.RH.Domain;
+package com.treinando_classes.demo.RH.FeriasAtestadosAfastamentos.Domain;
 import com.treinando_classes.demo.RH.regras_Enums.RegrasDeEnums;
 
 import java.time.LocalDate;

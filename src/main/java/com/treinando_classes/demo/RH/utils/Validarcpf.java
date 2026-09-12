@@ -1,4 +1,4 @@
-package com.treinando_classes.demo.RH.Domain;
+package com.treinando_classes.demo.RH.utils;
 
 public class Validarcpf {
     public boolean validar(String cpf) {

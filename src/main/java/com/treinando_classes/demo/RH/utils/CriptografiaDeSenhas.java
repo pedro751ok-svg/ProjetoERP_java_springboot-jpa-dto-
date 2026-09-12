@@ -1,5 +1,4 @@
-package com.treinando_classes.demo.RH.Domain;
-import jakarta.persistence.metamodel.StaticMetamodel;
+package com.treinando_classes.demo.RH.utils;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 

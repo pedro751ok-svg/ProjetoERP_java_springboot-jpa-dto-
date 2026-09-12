@@ -1,11 +1,11 @@
-package com.treinando_classes.demo.RH.Domain;
+package com.treinando_classes.demo.RH.Domain_ControleDeAcesso;
 import com.treinando_classes.demo.RH.regras_Enums.RegrasDeEnums;
 
 import java.util.EnumMap;
 import java.util.EnumSet;
 import java.util.Map;
 import java.util.Set;
-public class ControlleStatus {
+public class ControllleDeAcessoRBAC {
     public static final Map<RegrasDeEnums.CargoRh, Set<RegrasDeEnums.Permissoes>> PERMISSOES =
             new EnumMap<>(RegrasDeEnums.CargoRh.class);
     static{

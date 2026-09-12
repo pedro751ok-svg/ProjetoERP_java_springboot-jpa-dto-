@@ -1,9 +1,7 @@
-package com.treinando_classes.demo.RH.services;
+package com.treinando_classes.demo.RH.FeriasAtestadosAfastamentos.services;
 import com.treinando_classes.demo.RH.regras_Enums.RegrasDeEnums;
-import com.treinando_classes.demo.RH.repositories.SolicitacoesRepository;
-import com.treinando_classes.demo.RH.Domain.ControlleStatus;
 import com.treinando_classes.demo.RH.repositories.TipoDeSolicitacaoRepository;
-import com.treinando_classes.demo.RH.models.TipodeSolicitacao;
+import com.treinando_classes.demo.RH.FeriasAtestadosAfastamentos.models.TipodeSolicitacao;
 
 import java.time.LocalDate;
 

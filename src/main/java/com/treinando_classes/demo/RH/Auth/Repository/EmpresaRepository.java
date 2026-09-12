@@ -1,4 +1,4 @@
-package com.treinando_classes.demo.RH.repositories;
+package com.treinando_classes.demo.RH.Auth.Repository;
 import com.treinando_classes.demo.Shared.Empresa;
 import org.springframework.data.jpa.repository.JpaRepository;
 

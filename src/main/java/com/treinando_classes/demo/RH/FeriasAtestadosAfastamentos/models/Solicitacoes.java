@@ -1,10 +1,10 @@
-package com.treinando_classes.demo.RH.models;
+package com.treinando_classes.demo.RH.FeriasAtestadosAfastamentos.models;
 import com.treinando_classes.demo.RH.regras_Enums.RegrasDeEnums;
 import com.treinando_classes.demo.Shared.Funcionario;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -47,10 +47,9 @@ public class Solicitacoes {
     @JoinColumn(name = "afastamento", referencedColumnName = "id")
     private Afastamento afastamento_id;
 
-    private LocalDateTime DataInicio;
-    private LocalDateTime DataFim;
+    private LocalDate DataInicio;
+    private LocalDate DataFim;
 
-    private LocalDateTime CriadoEm;
-    private LocalDateTime AprovadoEm;
-    private LocalDateTime Reprovadoem;
+    private LocalDate AprovadoEm;
+    private LocalDate Reprovadoem;
 }

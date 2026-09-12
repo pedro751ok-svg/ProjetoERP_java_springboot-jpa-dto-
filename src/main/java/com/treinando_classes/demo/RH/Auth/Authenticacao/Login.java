@@ -1,8 +1,8 @@
-package com.treinando_classes.demo.RH.services;
-import com.treinando_classes.demo.RH.repositories.CadastroRepository;
+package com.treinando_classes.demo.RH.Auth.Authenticacao;
+import com.treinando_classes.demo.RH.Auth.Repository.CadastroRepository;
 import org.springframework.stereotype.Service;
 import com.treinando_classes.demo.Shared.Funcionario;
-import com.treinando_classes.demo.RH.Domain.CriptografiaDeSenhas;
+import com.treinando_classes.demo.RH.utils.CriptografiaDeSenhas;
 
 import java.util.Optional;
 

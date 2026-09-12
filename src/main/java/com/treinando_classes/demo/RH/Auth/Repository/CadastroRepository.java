@@ -1,8 +1,7 @@
 
-package com.treinando_classes.demo.RH.repositories;
+package com.treinando_classes.demo.RH.Auth.Repository;
 
 import com.treinando_classes.demo.Shared.Funcionario;
-import org.springframework.data.domain.Example;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

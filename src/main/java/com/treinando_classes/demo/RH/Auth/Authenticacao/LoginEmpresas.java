@@ -1,7 +1,6 @@
-package com.treinando_classes.demo.RH.services;
-import com.treinando_classes.demo.RH.repositories.EmpresaRepository;
-import com.treinando_classes.demo.RH.Domain.CriptografiaDeSenhas;
-import com.treinando_classes.demo.RH.repositories.EmpresaRepository;
+package com.treinando_classes.demo.RH.Auth.Authenticacao;
+import com.treinando_classes.demo.RH.Auth.Repository.EmpresaRepository;
+import com.treinando_classes.demo.RH.utils.CriptografiaDeSenhas;
 import com.treinando_classes.demo.Shared.Empresa;
 
 import java.util.Optional;

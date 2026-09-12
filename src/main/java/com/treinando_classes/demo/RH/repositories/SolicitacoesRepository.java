@@ -1,6 +1,6 @@
 package com.treinando_classes.demo.RH.repositories;
 
-import com.treinando_classes.demo.RH.models.Solicitacoes;
+import com.treinando_classes.demo.RH.FeriasAtestadosAfastamentos.models.Solicitacoes;
 import com.treinando_classes.demo.RH.regras_Enums.RegrasDeEnums;
 import org.springframework.data.jpa.repository.JpaRepository;
 

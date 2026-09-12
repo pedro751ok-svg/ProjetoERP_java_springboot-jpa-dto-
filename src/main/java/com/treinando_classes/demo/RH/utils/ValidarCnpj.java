@@ -1,4 +1,4 @@
-package com.treinando_classes.demo.RH.Domain;
+package com.treinando_classes.demo.RH.utils;
 
 public class ValidarCnpj {
     public static boolean validar(String cnpj) {

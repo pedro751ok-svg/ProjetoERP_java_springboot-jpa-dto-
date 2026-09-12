@@ -1,4 +1,4 @@
-package com.treinando_classes.demo.RH.models;
+package com.treinando_classes.demo.RH.FeriasAtestadosAfastamentos.models;
 import jakarta.persistence.*;
 import lombok.*;
 import com.treinando_classes.demo.RH.regras_Enums.RegrasDeEnums;

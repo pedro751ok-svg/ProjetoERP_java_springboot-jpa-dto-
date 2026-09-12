@@ -1,18 +1,18 @@
-package com.treinando_classes.demo.RH.services;
+package com.treinando_classes.demo.RH.Auth.Authenticacao;
+import com.treinando_classes.demo.RH.Auth.Repository.CadastroRepository;
 import com.treinando_classes.demo.Shared.Funcionario;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
-import com.treinando_classes.demo.RH.repositories.CadastroRepository;
-import com.treinando_classes.demo.RH.Domain.Validarcpf;
+import com.treinando_classes.demo.RH.utils.Validarcpf;
 import com.treinando_classes.demo.EnumsDaRaiz.EnumsParaUsoGeral;
-import com.treinando_classes.demo.RH.Domain.CriptografiaDeSenhas;
+import com.treinando_classes.demo.RH.utils.CriptografiaDeSenhas;
 @Service
 @Transactional
-public class Cadastros {
+public class CadastroFuncionario {
 
     private final CadastroRepository repository;
     private final CriptografiaDeSenhas criptografiaDeSenhas;
-    public Cadastros(CadastroRepository repository, CriptografiaDeSenhas criptografiaDeSenhas) {
+    public CadastroFuncionario(CadastroRepository repository, CriptografiaDeSenhas criptografiaDeSenhas) {
         this.repository = repository;
         this.criptografiaDeSenhas = criptografiaDeSenhas;
     }
