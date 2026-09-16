@@ -8,7 +8,6 @@ import java.time.LocalDate;
 import java.util.Optional;
 
 public interface SolicitacoesRepository extends JpaRepository<Solicitacoes, Long> {
-    boolean existsByIDataEmissao(LocalDate data_emissao);
     boolean existsById(long id);
     Optional<Solicitacoes> findFirstById_funcionario_IdAndId_tipo_IdAndStatusAndDataInicioAndDataFim(
             Long id_funcionario,

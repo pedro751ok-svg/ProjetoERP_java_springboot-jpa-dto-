@@ -39,7 +39,7 @@ public class CadastroFuncionario {
         .email(email)
         .senha(senha_criptografada)
         .setor(setor)
-        .build();
+                .build();
 
         return repository.save(novo_funcionario);
     }

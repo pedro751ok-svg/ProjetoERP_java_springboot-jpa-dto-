@@ -1,5 +1,7 @@
 package com.treinando_classes.demo.RH.Auth.Authenticacao;
 import com.treinando_classes.demo.RH.Auth.Repository.CadastroRepository;
+import com.treinando_classes.demo.Shared.Dto_And_Mapper.FuncionarioDTO;
+import com.treinando_classes.demo.Shared.Dto_And_Mapper.Mapper.FuncionarioMapper;
 import org.springframework.stereotype.Service;
 import com.treinando_classes.demo.Shared.Funcionario;
 import com.treinando_classes.demo.RH.utils.CriptografiaDeSenhas;
@@ -7,17 +9,19 @@ import com.treinando_classes.demo.RH.utils.CriptografiaDeSenhas;
 import java.util.Optional;
 
 @Service
-public class Login {
+public class LoginFuncionario {
 
     private final CadastroRepository repository;
     private final CriptografiaDeSenhas criptografiaDeSenhas;
+    private final FuncionarioMapper.MapperFuncionario funcionarioMapper;
 
-    public Login(CadastroRepository repository, CriptografiaDeSenhas criptografiaDeSenhas) {
+    public LoginFuncionario(CadastroRepository repository, CriptografiaDeSenhas criptografiaDeSenhas, FuncionarioMapper.MapperFuncionario funcionarioMapper) {
         this.repository = repository;
         this.criptografiaDeSenhas = criptografiaDeSenhas;
+        this.funcionarioMapper = funcionarioMapper;
     }
 
-    public Funcionario funcionario(String cpf, String senhaDigitada) {
+    public FuncionarioDTO funcionario(String cpf, String senhaDigitada) {
 
         Optional<Funcionario> cadastro_registrado = repository.findFirstByCpf(
                 cpf
@@ -34,7 +38,7 @@ public class Login {
         if(!senha_correta){
             throw new IllegalArgumentException("senha incorreta");
         }
-        return funcionario_encontrado;
+        return funcionarioMapper.toDto(funcionario_encontrado);
     }
 }
 
