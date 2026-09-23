@@ -1,4 +1,4 @@
-package com.treinando_classes.demo.RH.utils;
+package com.treinando_classes.demo.RH.FeriasAtestadosAfastamentos.Domain.utils;
 
 public class Validarcpf {
     public boolean validar(String cpf) {

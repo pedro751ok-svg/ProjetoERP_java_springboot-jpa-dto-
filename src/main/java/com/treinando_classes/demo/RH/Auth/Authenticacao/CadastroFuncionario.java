@@ -3,9 +3,9 @@ import com.treinando_classes.demo.RH.Auth.Repository.CadastroRepository;
 import com.treinando_classes.demo.Shared.Funcionario;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
-import com.treinando_classes.demo.RH.utils.Validarcpf;
+import com.treinando_classes.demo.RH.FeriasAtestadosAfastamentos.Domain.utils.Validarcpf;
 import com.treinando_classes.demo.EnumsDaRaiz.EnumsParaUsoGeral;
-import com.treinando_classes.demo.RH.utils.CriptografiaDeSenhas;
+import com.treinando_classes.demo.RH.FeriasAtestadosAfastamentos.Domain.utils.CriptografiaDeSenhas;
 @Service
 @Transactional
 public class CadastroFuncionario {

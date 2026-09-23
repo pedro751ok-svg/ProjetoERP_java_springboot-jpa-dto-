@@ -4,7 +4,7 @@ import com.treinando_classes.demo.Shared.Dto_And_Mapper.FuncionarioDTO;
 import com.treinando_classes.demo.Shared.Dto_And_Mapper.Mapper.FuncionarioMapper;
 import org.springframework.stereotype.Service;
 import com.treinando_classes.demo.Shared.Funcionario;
-import com.treinando_classes.demo.RH.utils.CriptografiaDeSenhas;
+import com.treinando_classes.demo.RH.FeriasAtestadosAfastamentos.Domain.utils.CriptografiaDeSenhas;
 
 import java.util.Optional;
 

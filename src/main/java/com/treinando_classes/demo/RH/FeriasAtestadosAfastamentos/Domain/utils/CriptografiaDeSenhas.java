@@ -1,4 +1,4 @@
-package com.treinando_classes.demo.RH.utils;
+package com.treinando_classes.demo.RH.FeriasAtestadosAfastamentos.Domain.utils;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 

@@ -2,7 +2,7 @@ package com.treinando_classes.demo.RH.Auth.Authenticacao;
 import com.treinando_classes.demo.RH.Auth.Repository.EmpresaRepository;
 import com.treinando_classes.demo.Shared.Dto_And_Mapper.EmpresaDto;
 import com.treinando_classes.demo.Shared.Dto_And_Mapper.Mapper.EmpresaMapper;
-import com.treinando_classes.demo.RH.utils.CriptografiaDeSenhas;
+import com.treinando_classes.demo.RH.FeriasAtestadosAfastamentos.Domain.utils.CriptografiaDeSenhas;
 import com.treinando_classes.demo.Shared.Empresa;
 
 import java.util.Optional;

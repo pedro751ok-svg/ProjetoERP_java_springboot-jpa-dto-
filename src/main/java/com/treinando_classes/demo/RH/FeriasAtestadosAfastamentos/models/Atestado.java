@@ -15,7 +15,7 @@ public class Atestado {
     private long id;
 
      @OneToOne
-     @JoinColumn(name = "solicitacao_id")
+     @JoinColumn(name = "solicitacao_id", referencedColumnName = "id")
      private Solicitacoes solicitacao_id;
 
      @Column(nullable = false)

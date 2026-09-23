@@ -1,7 +1,7 @@
 package com.treinando_classes.demo.RH.Auth.Authenticacao;
-import com.treinando_classes.demo.RH.utils.CriptografiaDeSenhas;
+import com.treinando_classes.demo.RH.FeriasAtestadosAfastamentos.Domain.utils.CriptografiaDeSenhas;
 import com.treinando_classes.demo.RH.Auth.Repository.EmpresaRepository;
-import com.treinando_classes.demo.RH.utils.ValidarCnpj;
+import com.treinando_classes.demo.RH.FeriasAtestadosAfastamentos.Domain.utils.ValidarCnpj;
 import com.treinando_classes.demo.Shared.Empresa;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
