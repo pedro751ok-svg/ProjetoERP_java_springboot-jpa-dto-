@@ -1,8 +1,8 @@
 package com.treinando_classes.demo.Shared;
 
+import com.treinando_classes.demo.DefinirCargos;
 import jakarta.persistence.*;
 import lombok.*;
-import com.treinando_classes.demo.RH.regras_Enums.RegrasDeEnums;
 import com.treinando_classes.demo.EnumsDaRaiz.EnumsParaUsoGeral;
 @Getter
 @Setter
@@ -33,10 +33,16 @@ public class Funcionario {
     private EnumsParaUsoGeral.Setor setor;
 
     @Column(nullable = false)
-    private String endereço;
+    private String endereco;
 
     @Column(nullable = false)
     private String telefone;
+
+    @JoinColumn(name = "id_cargo", referencedColumnName = "id")
+    private DefinirCargos IdCargo;
+
+    @JoinColumn(name = "id_empresa",referencedColumnName = "id")
+    private Empresa id_empresa;
 
     @Column(nullable = false)
     private java.time.LocalDate data_admissao;

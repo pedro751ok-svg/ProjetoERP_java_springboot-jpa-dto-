@@ -14,6 +14,11 @@ import lombok.Setter;
 @Table(name = "salario_descontado")
 @Entity
 public class SalarioDescontado {
+    @GeneratedValue
+    @Column
+    @Id
+    private long id;
+
     @OneToOne
     @JoinColumn(name = "id_FolhaDePagamento", referencedColumnName = "id")
     private FolhaDePagamento id_FolhaDePagamento;
@@ -21,4 +26,7 @@ public class SalarioDescontado {
     @OneToOne
     @JoinColumn(name = "id_funcionario", referencedColumnName = "id")
     private Funcionario id_funcionario;
+
+    @Column(nullable = false)
+    private double total;
 }

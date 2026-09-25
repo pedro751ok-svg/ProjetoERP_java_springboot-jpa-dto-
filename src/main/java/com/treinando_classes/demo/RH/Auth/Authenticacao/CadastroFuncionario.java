@@ -1,4 +1,6 @@
 package com.treinando_classes.demo.RH.Auth.Authenticacao;
+import com.treinando_classes.demo.DefinirCargos;
+import com.treinando_classes.demo.CargoRepository;
 import com.treinando_classes.demo.RH.Auth.Repository.CadastroRepository;
 import com.treinando_classes.demo.Shared.Funcionario;
 import jakarta.transaction.Transactional;
@@ -6,19 +8,31 @@ import org.springframework.stereotype.Service;
 import com.treinando_classes.demo.RH.FeriasAtestadosAfastamentos.Domain.utils.Validarcpf;
 import com.treinando_classes.demo.EnumsDaRaiz.EnumsParaUsoGeral;
 import com.treinando_classes.demo.RH.FeriasAtestadosAfastamentos.Domain.utils.CriptografiaDeSenhas;
+
 @Service
 @Transactional
 public class CadastroFuncionario {
 
     private final CadastroRepository repository;
     private final CriptografiaDeSenhas criptografiaDeSenhas;
-    public CadastroFuncionario(CadastroRepository repository, CriptografiaDeSenhas criptografiaDeSenhas) {
+    private final CargoRepository cargoRepository;
+    public CadastroFuncionario(CadastroRepository repository, CriptografiaDeSenhas criptografiaDeSenhas,
+                               CargoRepository cargoRepository) {
         this.repository = repository;
         this.criptografiaDeSenhas = criptografiaDeSenhas;
+        this.cargoRepository = cargoRepository;
     }
     // salvando cadastros na tabela
-    public Funcionario funcionario(String nome, String cpf, String email,String senha, EnumsParaUsoGeral.Setor setor ){
+    public Funcionario funcionario(String nome, String cpf, String email,String senha, EnumsParaUsoGeral.Setor setor, long IdCargo ){
         Validarcpf validador = new Validarcpf();
+
+        DefinirCargos cargo_atribuido = cargoRepository.findById(IdCargo).
+                orElseThrow(() -> new IllegalArgumentException("Cargo não encontrado"));
+
+        if(cargo_atribuido != null){
+            throw new IllegalArgumentException("cargo do funcionario nao foi atribuido");
+        }
+
         if(!validador.validar(cpf)) {
             throw new IllegalArgumentException("cpf invalido");
         }
@@ -39,7 +53,9 @@ public class CadastroFuncionario {
         .email(email)
         .senha(senha_criptografada)
         .setor(setor)
-                .build();
+        .IdCargo(cargo_atribuido)
+        .build();
+
 
         return repository.save(novo_funcionario);
     }

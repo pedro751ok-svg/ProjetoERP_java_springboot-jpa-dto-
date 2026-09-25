@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.time.LocalTime;
 import java.time.LocalDate;
 
@@ -19,6 +20,7 @@ import java.time.LocalDate;
 public class FolhaDePagamento {
     @Column
     @GeneratedValue
+    @Id
     private long id;
 
     @JoinColumn(name = "id_funcionario", referencedColumnName ="id")
@@ -27,10 +29,10 @@ public class FolhaDePagamento {
     private Funcionario id_funcionario;
 
     @Column(nullable = false)
-    private double Salario;
+    private BigDecimal Salario;
 
     @Column(nullable = false)
-    private double TotalDescontos;
+    private BigDecimal TotalDescontos;
 
     @Column(nullable = false)
     private LocalTime HorasTrabalhadas;
@@ -39,7 +41,7 @@ public class FolhaDePagamento {
     private LocalTime HorasExtras;
 
     @Column(nullable = false)
-    private double ValorGanhoPorHora;
+    private BigDecimal ValorGanhoPorHora;
 
     @Column(nullable = false)
     private int mes;
