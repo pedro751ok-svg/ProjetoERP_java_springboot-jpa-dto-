@@ -1,5 +1,6 @@
 package com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Model;
 
+import com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Domain.EnumBeneficios;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,7 +27,7 @@ public class Beneficios {
     private String TipoDeBeneficio;
 
     @Column(nullable = false)
-    private LocalTime Periodicidade;
+    private EnumBeneficios.Periodicidade Periodicidade;
 
     @Column(nullable = false)
     private boolean Ativo;
@@ -35,5 +36,5 @@ public class Beneficios {
     private String Fornecedor;
 
     @Column
-    private String TipoDeCalculo;
+    private EnumBeneficios.Tipo_De_Calculo TipoDeCalculo;
 }

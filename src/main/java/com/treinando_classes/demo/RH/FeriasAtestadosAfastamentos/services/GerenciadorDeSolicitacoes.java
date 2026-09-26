@@ -32,7 +32,7 @@ public class GerenciadorDeSolicitacoes {
 
     public Solicitacoes gerenciador(long id_funcionario, long id_tipo, RegrasDeEnums.status status, LocalDate DataInicio, LocalDate DataFim) {
         if (status != RegrasDeEnums.status.PENDENTE) {
-            throw new IllegalArgumentException("solicitção sem status pendente");
+            throw new IllegalArgumentException("s1licitção sem status pendente");
         }
         if(DataInicio.isAfter(DataFim)){
             throw new IllegalArgumentException("as datas nao condizem uma com a outra");

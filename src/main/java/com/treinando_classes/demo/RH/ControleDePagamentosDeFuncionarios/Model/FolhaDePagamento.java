@@ -44,6 +44,9 @@ public class FolhaDePagamento {
     private BigDecimal ValorGanhoPorHora;
 
     @Column(nullable = false)
+    private LocalTime HorasFaltantes;
+
+    @Column(nullable = false)
     private int mes;
 
     @Column(nullable = false)
