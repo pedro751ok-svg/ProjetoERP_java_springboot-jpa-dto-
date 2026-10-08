@@ -1,21 +1,17 @@
 package com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Model;
 
 import com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Domain.EnumBeneficios;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
+import java.math.BigDecimal;
 import java.time.LocalTime;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Table(name = "beneficios")
 @Entity
 public class Beneficios {
@@ -30,6 +26,9 @@ public class Beneficios {
     private EnumBeneficios.Periodicidade Periodicidade;
 
     @Column(nullable = false)
+    private BigDecimal ValorDoBeneficio;
+
+    @Column(nullable = false)
     private boolean Ativo;
 
     @Column
@@ -37,4 +36,7 @@ public class Beneficios {
 
     @Column
     private EnumBeneficios.Tipo_De_Calculo TipoDeCalculo;
+
+    @Version
+    private Long version;
 }

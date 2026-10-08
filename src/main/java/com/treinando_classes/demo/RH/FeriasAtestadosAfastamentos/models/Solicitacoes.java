@@ -47,6 +47,9 @@ public class Solicitacoes {
     @JoinColumn(name = "afastamento", referencedColumnName = "id")
     private Afastamento afastamento_id;
 
+    @Version
+    private Long version;
+
     private LocalDate DataInicio;
     private LocalDate DataFim;
 

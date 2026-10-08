@@ -2,6 +2,6 @@ package com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Interfa
 
 import java.math.BigDecimal;
 
-public interface BeneficoTransport {
-    BigDecimal descontoBeneficio(BigDecimal salario);
+public interface DescontoBeneficioInterface {
+    BigDecimal descontoBeneficio(BigDecimal ValorDoBeneficio);
 }
