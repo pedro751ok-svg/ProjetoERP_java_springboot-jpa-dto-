@@ -1,6 +1,11 @@
 package com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Domain;
 
 public class EnumBeneficios {
+    public enum Tipo_De_Beneficio{
+        VT,
+        VR,
+        CONVENIO
+    }
 
     public enum Tipo_De_Calculo{
         PORCENTAGEM,

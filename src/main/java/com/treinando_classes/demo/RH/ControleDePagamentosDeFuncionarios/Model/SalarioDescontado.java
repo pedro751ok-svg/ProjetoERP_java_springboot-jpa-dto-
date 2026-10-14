@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -28,5 +30,5 @@ public class SalarioDescontado {
     private Funcionario id_funcionario;
 
     @Column(nullable = false)
-    private double total;
+    private BigDecimal total;
 }
