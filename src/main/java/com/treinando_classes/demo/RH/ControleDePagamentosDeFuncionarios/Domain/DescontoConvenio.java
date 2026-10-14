@@ -4,7 +4,7 @@ import com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Interfac
 
 import java.math.BigDecimal;
 
-public class DscontoConvenio implements DescontoBeneficioInterface {
+public class DescontoConvenio implements DescontoBeneficioInterface {
     @Override
     public BigDecimal descontoBeneficio(BigDecimal ValorDoBeneficio){
         return ValorDoBeneficio.multiply(new BigDecimal("0.30"));

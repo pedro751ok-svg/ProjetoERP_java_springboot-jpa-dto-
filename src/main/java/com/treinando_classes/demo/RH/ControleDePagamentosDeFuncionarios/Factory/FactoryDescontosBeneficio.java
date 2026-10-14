@@ -2,7 +2,7 @@ package com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Factory
 
 import com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Domain.DescontoVT;
 import com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Domain.DescontoVr;
-import com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Domain.DscontoConvenio;
+import com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Domain.DescontoConvenio;
 import com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Interface.DescontoBeneficioInterface;
 import org.springframework.stereotype.Component;
 
@@ -13,7 +13,7 @@ public class FactoryDescontosBeneficio {
     private final Map<String , DescontoBeneficioInterface> map = Map.of(
             "VT", new DescontoVT(),
             "VR", new DescontoVr(),
-            "CONVENIO", new DscontoConvenio()
+            "CONVENIO", new DescontoConvenio()
     );
     public DescontoBeneficioInterface get(String tipoDeBeneficio) {
         DescontoBeneficioInterface strategy = map.get(tipoDeBeneficio.toUpperCase());

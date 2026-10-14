@@ -73,6 +73,7 @@ public class GerenciadorDeSolicitacoes {
         return nova_solicitacao;
 
     }
+
     private void _criar_registro_filho(RegrasDeEnums.MeioDeAfastamento tipo, Solicitacoes id_solicitacao ){
         if (tipo == RegrasDeEnums.MeioDeAfastamento.FERIAS) {
             Ferias ferias = Ferias.builder()
