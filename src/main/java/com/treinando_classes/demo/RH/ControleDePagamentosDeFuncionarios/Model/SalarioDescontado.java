@@ -30,5 +30,9 @@ public class SalarioDescontado {
     private Funcionario id_funcionario;
 
     @Column(nullable = false)
-    private BigDecimal total;
+    private BigDecimal total_beneficio;
+    @Column
+    private BigDecimal total_horas;
+    @Version
+    private Long version;
 }

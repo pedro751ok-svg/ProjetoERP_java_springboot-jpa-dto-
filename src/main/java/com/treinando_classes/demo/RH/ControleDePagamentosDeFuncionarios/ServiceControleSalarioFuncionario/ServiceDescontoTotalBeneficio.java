@@ -11,6 +11,7 @@ import com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Reposito
 import com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Repository.FolhaPagamentoRepository;
 import com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Repository.SalarioDescontadoRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -68,6 +69,7 @@ public class ServiceDescontoTotalBeneficio {
         throw new IllegalArgumentException("tipo do beneficio nao reconhecido" + tipoDeBeneficio);
 
     }
+    @Transactional
     public SalarioDescontado descontar(long idFolha, long idBeneficio) {
         FolhaDePagamento folha = folhaDePagamento(idFolha);
         BigDecimal salario = folha.getSalario();
@@ -81,7 +83,7 @@ public class ServiceDescontoTotalBeneficio {
         SalarioDescontado registro = new SalarioDescontado();
         registro.setId_FolhaDePagamento(folha);
         registro.setId_funcionario(folha.getId_funcionario());
-        registro.setTotal(liquido);
+        registro.setTotal_beneficio(liquido);
 
         return salarioDescontadoRepository.save(registro);
     }
