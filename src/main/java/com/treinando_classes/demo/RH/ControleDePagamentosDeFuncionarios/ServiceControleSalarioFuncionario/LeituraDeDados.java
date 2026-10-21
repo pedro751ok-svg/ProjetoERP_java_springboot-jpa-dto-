@@ -5,9 +5,11 @@ import com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Model.Fo
 import com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Model.SalarioDescontado;
 import com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Repository.BeneficiosRepository;
 import com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Repository.FolhaPagamentoRepository;
+import com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Repository.FuncionarioBeneficioRepository;
 import com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Repository.SalarioDescontadoRepository;
 import jakarta.persistence.Id;
 
+import java.util.List;
 import java.util.Optional;
 
 public class LeituraDeDados {
@@ -15,15 +17,18 @@ public class LeituraDeDados {
     private final BeneficiosRepository beneficiosRepository;
     private final FolhaPagamentoRepository folhaPagamentoRepository;
     private final SalarioDescontadoRepository salarioDescontadoRepository;
+    private final FuncionarioBeneficioRepository funcionarioBeneficioRepository;
 
     public LeituraDeDados(
             BeneficiosRepository beneficiosRepository,
             FolhaPagamentoRepository folhaPagamentoRepository,
-            SalarioDescontadoRepository salarioDescontadoRepository
+            SalarioDescontadoRepository salarioDescontadoRepository,
+            FuncionarioBeneficioRepository funcionarioBeneficioRepository
     ) {
         this.beneficiosRepository = beneficiosRepository;
         this.folhaPagamentoRepository = folhaPagamentoRepository;
         this.salarioDescontadoRepository = salarioDescontadoRepository;
+        this.funcionarioBeneficioRepository = funcionarioBeneficioRepository;
     }
 
     public Beneficios buscar_beneficio(long IdBeneficio) {
@@ -85,5 +90,25 @@ public class LeituraDeDados {
                     "nao encontrado");
         }
         return ResultadoDaBuscaDaFolhaPorFuncionario.get();
+    }
+
+
+    public List<Beneficios> ListarBeneficiosAtivos() {
+        return beneficiosRepository.listarAtivos();
+    }
+
+    public List<SalarioDescontado> ListarSalariosDescontadosPorFuncionario(long IdFuncionario) {
+        return salarioDescontadoRepository.listarPorFuncionario(IdFuncionario);
+    }
+
+    public List<Beneficios> ListarBeneficiosDoFuncionario(long IdFuncionario) {
+        return funcionarioBeneficioRepository.listarBeneficiosPorFuncionario(IdFuncionario);
+    }
+
+    public List<FolhaDePagamento> BuscarFolhaPorFuncionarioEMes(long IdFuncionario, int mes) {
+        if (mes < 1 || mes > 12) {
+            throw new IllegalArgumentException("O mes deve estar entre 1 e 12");
+        }
+        return folhaPagamentoRepository.listarPorFuncionarioEMes(IdFuncionario, mes);
     }
 }
