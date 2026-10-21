@@ -10,7 +10,7 @@ public class TokenGenerated {
     private static final SecretKey SECRET_KEY =
     Keys.hmacShaKeyFor("LEMBRAR DE COLOCAR A SECRETE_KEY AQUI".getBytes());
 
-    private static final long EXPIRATION_MS = 3600_00;
+    private static final long EXPIRATION_MS =  7 * 60 * 1000L;
 
     public String gerarToken(String username){
         return Jwts.builder()

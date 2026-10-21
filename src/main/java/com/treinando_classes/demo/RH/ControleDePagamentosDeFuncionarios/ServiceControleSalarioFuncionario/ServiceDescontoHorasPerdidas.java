@@ -23,6 +23,7 @@ public class ServiceDescontoHorasPerdidas {
         this.repository = repository;
         this.folhaPagamentoRepository = folhaPagamentoRepository;
     }
+
     public FolhaDePagamento Buscar_folha(long IdFolhaDePagamento){
         Optional<FolhaDePagamento> Resultado_Busca_Folha = folhaPagamentoRepository.findById(IdFolhaDePagamento);
         if(Resultado_Busca_Folha.isEmpty()){
@@ -30,6 +31,7 @@ public class ServiceDescontoHorasPerdidas {
         }
         return Resultado_Busca_Folha.get();
     }
+
     @Transactional
     public BigDecimal definir_descontos(long IdFolhaDePagamento){
         FolhaDePagamento desconto_folha = Buscar_folha(IdFolhaDePagamento);
@@ -38,6 +40,7 @@ public class ServiceDescontoHorasPerdidas {
         BigDecimal DescontoAplicado = new DescontoHoras().descontos_horas(ValorPorHora,ValorDesconto);
         return DescontoAplicado;
     }
+
     public SalarioDescontado desconto(long IdFolhaDePagamento ){
         FolhaDePagamento folha = Buscar_folha(IdFolhaDePagamento);
         BigDecimal salario = folha.getSalario();
@@ -55,6 +58,7 @@ public class ServiceDescontoHorasPerdidas {
 
         return repository.save(registro);
     }
+
     private BigDecimal AplicarDesconto(BigDecimal salario, BigDecimal ValorDesconto){
 
         if (ValorDesconto.compareTo(salario) > 0) {

@@ -32,6 +32,7 @@ public class RegistrarBeneficio {
                 .build();
 
         repository.save(novo_beneficio);
+
         return novo_beneficio;
     }
     }

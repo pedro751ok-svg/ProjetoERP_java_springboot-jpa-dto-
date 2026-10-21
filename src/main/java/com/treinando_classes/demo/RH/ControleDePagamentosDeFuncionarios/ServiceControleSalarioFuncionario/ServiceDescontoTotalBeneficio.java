@@ -31,12 +31,14 @@ public class ServiceDescontoTotalBeneficio {
         this.folhaPagamentoRepository = folhaPagamentoRepository;
         this.salarioDescontadoRepository = salarioDescontadoRepository;
     }
+
     public Beneficios beneficios( long Id_Beneficio){
         Optional<Beneficios> Buscarbeneficios = repository.findById(Id_Beneficio);
 
         if(Buscarbeneficios.isEmpty()){
             throw new  IllegalArgumentException("beneficio nao encontrado");
         }
+
         return Buscarbeneficios.get();
     }
     public FolhaDePagamento folhaDePagamento( long Id_Salario){
@@ -45,6 +47,7 @@ public class ServiceDescontoTotalBeneficio {
         if(Buscarsalario.isEmpty()){
             throw new IllegalArgumentException("Informações de salario nao encontrada");
         }
+
         return Buscarsalario.get();
     }
     public BigDecimal definir_desconto(EnumBeneficios.Tipo_De_Beneficio tipoDeBeneficio,long IdBeneficio){
@@ -53,13 +56,16 @@ public class ServiceDescontoTotalBeneficio {
             BigDecimal ValorDesconto = beneficio_vt.getValorDoBeneficio();
             BigDecimal valor_final_desconto_vt  = new DescontoVT().descontoBeneficio(ValorDesconto);
             return valor_final_desconto_vt;
+
         }
         if( tipoDeBeneficio == EnumBeneficios.Tipo_De_Beneficio.VR){
             Beneficios benficios_Vr = beneficios(IdBeneficio);
             BigDecimal ValorDesconto = benficios_Vr.getValorDoBeneficio();
             BigDecimal valor_final_desconto_vr = new DescontoVr().descontoBeneficio(ValorDesconto);
             return valor_final_desconto_vr;
+
         }
+
         if(tipoDeBeneficio == EnumBeneficios.Tipo_De_Beneficio.CONVENIO){
             Beneficios beneficio_convenio = beneficios(IdBeneficio);
             BigDecimal ValorDesconto = beneficio_convenio.getValorDoBeneficio();
@@ -69,6 +75,7 @@ public class ServiceDescontoTotalBeneficio {
         throw new IllegalArgumentException("tipo do beneficio nao reconhecido" + tipoDeBeneficio);
 
     }
+
     @Transactional
     public SalarioDescontado descontar(long idFolha, long idBeneficio) {
         FolhaDePagamento folha = folhaDePagamento(idFolha);
@@ -87,6 +94,7 @@ public class ServiceDescontoTotalBeneficio {
 
         return salarioDescontadoRepository.save(registro);
     }
+
     private BigDecimal AplicarDesconto(BigDecimal salario, BigDecimal ValorDesconto){
         if(ValorDesconto == null){
             throw new IllegalArgumentException("os valores nao podem ser nulos");
