@@ -5,11 +5,11 @@ import com.treinando_classes.demo.RH.repositories.*;
 import com.treinando_classes.demo.RH.Auth.Repository.CadastroRepository;
 import com.treinando_classes.demo.Shared.Funcionario;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDate;
 import java.util.Optional;
 @Service
 public class GerenciadorDeSolicitacoes {
+
     private final SolicitacoesRepository repository;
     private final TipoDeSolicitacaoRepository tipodeSolicitacao;
     private final CadastroRepository cadastroRepository;

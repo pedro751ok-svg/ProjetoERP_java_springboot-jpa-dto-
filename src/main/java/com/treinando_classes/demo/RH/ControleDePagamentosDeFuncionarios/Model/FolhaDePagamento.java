@@ -46,6 +46,9 @@ public class FolhaDePagamento {
     @Column(nullable = false)
     private BigDecimal HorasFaltantes;
 
+    @Version
+    private Long  version;
+
     @Column(nullable = false)
     private int mes;
 

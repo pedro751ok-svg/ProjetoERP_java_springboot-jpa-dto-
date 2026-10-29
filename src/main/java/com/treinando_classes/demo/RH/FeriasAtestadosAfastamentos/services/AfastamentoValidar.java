@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class AfastamentoValidar {
 
+
     private SolicitacoesRepository solicitacoesRepository;
     public AfastamentoValidar(SolicitacoesRepository  solicitacoesrepository){
         this.solicitacoesRepository = solicitacoesrepository;
@@ -33,5 +34,7 @@ public class AfastamentoValidar {
         if(afastamentos_exixstentes.isPresent()){
             throw new IllegalArgumentException("funcionario ja pussui uma afastamento ");
         }
+
+
     }
 }

@@ -13,6 +13,7 @@ import java.util.Optional;
 public class AtestadoValidar {
     private final SolicitacoesRepository solicitacoesRepository;
 
+
     public AtestadoValidar(SolicitacoesRepository solicitacoesRepository) {
         this.solicitacoesRepository = solicitacoesRepository;
     }
@@ -30,7 +31,7 @@ public class AtestadoValidar {
                         data_inicio,
                         data_fim
                 );
-        if(atestado_existentes.isPresent()){
+        if(atestado_existentes.isPresent()) {
             throw new IllegalArgumentException("funcionario ja entregou esse mesmo atestado");
         }
     }

@@ -8,6 +8,7 @@ import java.time.LocalDate;
 
 
 public class EnviarSolicitação {
+
     private final TipoDeSolicitacaoRepository repository;
 
     public EnviarSolicitação(TipoDeSolicitacaoRepository repository, TipodeSolicitacao nova_solicitacao) {
@@ -24,5 +25,6 @@ public class EnviarSolicitação {
 
         return nova_solicitacao;
     }
+
 }
 

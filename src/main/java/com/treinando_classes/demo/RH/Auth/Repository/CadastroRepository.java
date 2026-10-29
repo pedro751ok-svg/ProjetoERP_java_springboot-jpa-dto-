@@ -7,8 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 public interface CadastroRepository extends JpaRepository<Funcionario,Long> {
-    boolean existsByCpf(String cpf);
     boolean existsByEmail(String email);
-
+    boolean existsByCpf(String cpf);
     Optional<Funcionario>findFirstByCpf(String cpf);
 }

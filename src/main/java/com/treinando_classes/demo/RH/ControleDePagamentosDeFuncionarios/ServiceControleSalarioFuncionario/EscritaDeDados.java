@@ -17,7 +17,7 @@ public class EscritaDeDados {
         this.beneficiosRepository = beneficiosRepository;
     }
 
-    // o tipo do beneficio (VT, VR, CONVENIO) nao muda, ele identifica o beneficio
+
     @Transactional
     public Beneficios AtualizarBeneficio(long IdBeneficio, EnumBeneficios.Periodicidade Periodicidade, BigDecimal ValorDoBeneficio,
                                          String Fornecedor, EnumBeneficios.Tipo_De_Calculo TipoDeCalculo, boolean Ativo) {

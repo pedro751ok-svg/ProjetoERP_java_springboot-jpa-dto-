@@ -105,7 +105,7 @@ public class LeituraDeDados {
         return funcionarioBeneficioRepository.listarBeneficiosPorFuncionario(IdFuncionario);
     }
 
-    public List<FolhaDePagamento> BuscarFolhaPorFuncionarioEMes(long IdFuncionario, int mes) {
+    public List<FolhaDePagamento> BuscarFolhaPorData(long IdFuncionario, int mes) {
         if (mes < 1 || mes > 12) {
             throw new IllegalArgumentException("O mes deve estar entre 1 e 12");
         }

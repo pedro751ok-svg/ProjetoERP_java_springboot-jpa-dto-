@@ -4,6 +4,7 @@ import com.treinando_classes.demo.RH.FeriasAtestadosAfastamentos.models.Solicita
 import com.treinando_classes.demo.RH.FeriasAtestadosAfastamentos.Domain.EstadoSolicitacao;
 import com.treinando_classes.demo.RH.regras_Enums.RegrasDeEnums;
 import com.treinando_classes.demo.RH.repositories.SolicitacoesRepository;
+
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -11,6 +12,7 @@ import java.util.Optional;
 
 @Service
 public class FeriasValidar {
+
 
     private final SolicitacoesRepository solicitacoesRepository;
 
