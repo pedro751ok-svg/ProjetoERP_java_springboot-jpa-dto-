@@ -12,6 +12,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Builder
 @Table(name = "solicitacoes")
+@Entity
 public class Solicitacoes {
     @GeneratedValue
     @Id

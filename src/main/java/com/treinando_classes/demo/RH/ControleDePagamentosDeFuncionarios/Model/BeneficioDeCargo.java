@@ -18,7 +18,6 @@ import java.time.LocalDate;
 @Entity
 public class BeneficioDeCargo {
     @GeneratedValue
-    @Column
     @Id
     private long id;
 

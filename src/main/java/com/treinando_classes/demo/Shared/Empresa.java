@@ -20,10 +20,10 @@ public class Empresa {
     private String nome_empresa;
 
     @Column(nullable = false, unique = true)
-    private String Cnpj;
+    private String cnpj;
 
     @Column(nullable = false, unique = true)
-    private String EmailCorporativo;
+    private String emailCorporativo;
 
     @Column(nullable = false)
     private String senha;

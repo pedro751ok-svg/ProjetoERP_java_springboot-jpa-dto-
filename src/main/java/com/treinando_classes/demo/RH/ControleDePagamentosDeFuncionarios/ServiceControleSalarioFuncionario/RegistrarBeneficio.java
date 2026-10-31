@@ -24,10 +24,10 @@ public class RegistrarBeneficio {
                     "em caso de alteração remova o beneficio antigo primeiro");
         }
         Beneficios novo_beneficio = Beneficios.builder()
-                .TipoDeBeneficio(TipoDeBeneficio)
-                .Periodicidade(Periodicidade)
-                .ValorDoBeneficio(ValorDoBeneficio)
-                .Fornecedor(Fornecedor)
+                .tipoDeBeneficio(TipoDeBeneficio)
+                .periodicidade(Periodicidade)
+                .valorDoBeneficio(ValorDoBeneficio)
+                .fornecedor(Fornecedor)
                 .TipoDeCalculo(TipoDeCalculo)
                 .build();
 

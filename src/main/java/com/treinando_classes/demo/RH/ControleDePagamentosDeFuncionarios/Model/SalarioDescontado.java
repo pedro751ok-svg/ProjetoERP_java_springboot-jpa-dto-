@@ -17,7 +17,6 @@ import java.math.BigDecimal;
 @Entity
 public class SalarioDescontado {
     @GeneratedValue
-    @Column
     @Id
     private long id;
 
@@ -26,8 +25,8 @@ public class SalarioDescontado {
     private FolhaDePagamento id_FolhaDePagamento;
 
     @OneToOne
-    @JoinColumn(name = "id_funcionario", referencedColumnName = "id")
-    private Funcionario id_funcionario;
+    @JoinColumn(name = "id_funcionario")
+    private Funcionario funcionario;
 
     @Column(nullable = false)
     private BigDecimal total_beneficio;

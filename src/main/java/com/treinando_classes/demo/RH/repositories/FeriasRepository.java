@@ -9,5 +9,5 @@ import java.util.List;
 
 public interface FeriasRepository extends JpaRepository<Ferias, Long>{
     @Query("select Fe from Ferias Fe where Fe.solicitacao_id.id_funcionario = :id_funcionario")
-    List<Ferias>ListarFeriasPorFuncionarios(@Param("id_funcionario")long id_funcionario);
+    List<Ferias>ListarFeriasPorFuncionarios(@Param("IdFuncionario")long IdFuncionario);
 }

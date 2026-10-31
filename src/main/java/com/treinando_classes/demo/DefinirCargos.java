@@ -21,7 +21,7 @@ public class DefinirCargos {
 
     @Column(nullable = false)
     private String NomeDoCargo;
-
+    @ManyToOne
     @JoinColumn(name = "id_empresa", referencedColumnName = "id")
     private Empresa id_empresa;
 }

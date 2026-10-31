@@ -18,14 +18,13 @@ import java.time.LocalDate;
 @Table(name = "folha_de_pagamento")
 @Entity
 public class FolhaDePagamento {
-    @Column
+
     @GeneratedValue
     @Id
     private long id;
 
-    @JoinColumn(name = "id_funcionario", referencedColumnName ="id")
     @OneToOne
-    @Column
+    @JoinColumn(name = "id_funcionario", referencedColumnName ="id")
     private Funcionario id_funcionario;
 
     @Column(nullable = false)

@@ -9,5 +9,5 @@ import java.util.List;
 public interface AtestadoRepository extends JpaRepository<Atestado, Long > {
 
     @Query("select At from AtestadosAt where At.solicitacao_id.id_funcionario = :id_funcionario")
-    List<Atestado>ListarAtestadoPorFucionarios(@Param("id_funcionario")long id_funcionario);
+    List<Atestado>ListarAtestadoPorFucionarios(@Param("IdFuncionario")long IdFuncionario);
 }

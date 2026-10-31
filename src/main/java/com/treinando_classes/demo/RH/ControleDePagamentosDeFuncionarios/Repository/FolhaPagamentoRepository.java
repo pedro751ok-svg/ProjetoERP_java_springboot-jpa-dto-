@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface FolhaPagamentoRepository extends JpaRepository<FolhaDePagamento, Long> {
-    Optional<FolhaDePagamento>findById_funcionario(long id_funcionario);
+    Optional<FolhaDePagamento>findByIdFuncionario(long IdFuncionario);
 
     @Query("select f from FolhaDePagamento f where f.id_funcionario.id = :idFuncionario and f.mes = :mes")
     List<FolhaDePagamento> listarPorFuncionarioEMes(@Param("idFuncionario") long idFuncionario,

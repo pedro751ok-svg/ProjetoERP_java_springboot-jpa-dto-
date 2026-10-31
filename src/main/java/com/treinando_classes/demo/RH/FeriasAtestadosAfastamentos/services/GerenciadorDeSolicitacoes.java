@@ -40,7 +40,7 @@ public class GerenciadorDeSolicitacoes {
         }
 
             Optional<Solicitacoes> solicitacao = repository.
-                    findFirstById_funcionario_IdAndId_tipo_IdAndStatusAndDataInicioAndDataFim(
+                    findFirstByIdFuncionario_IdAndId_tipo_IdAndStatusAndDataInicioAndDataFim(
                             id_funcionario,
                             id_tipo,
                             status,

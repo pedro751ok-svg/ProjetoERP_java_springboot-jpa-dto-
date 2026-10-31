@@ -38,9 +38,11 @@ public class Funcionario {
     @Column(nullable = false)
     private String telefone;
 
+    @ManyToOne
     @JoinColumn(name = "id_cargo", referencedColumnName = "id")
     private DefinirCargos IdCargo;
 
+    @ManyToOne
     @JoinColumn(name = "id_empresa",referencedColumnName = "id")
     private Empresa id_empresa;
 

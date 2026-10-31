@@ -22,7 +22,7 @@ public class AfastamentoValidar {
             throw new IllegalArgumentException("regra de status violada" + resultado);
         }
         Optional<Solicitacoes> afastamentos_exixstentes = solicitacoesRepository
-                .findFirstById_funcionario_IdAndId_tipo_IdAndStatusAndDataInicioAndDataFim(
+                .findFirstByIdFuncionario_IdAndId_tipo_IdAndStatusAndDataInicioAndDataFim(
                         IdFuncionario,
                         id_tipo,
                         RegrasDeEnums.status.APROVADO,

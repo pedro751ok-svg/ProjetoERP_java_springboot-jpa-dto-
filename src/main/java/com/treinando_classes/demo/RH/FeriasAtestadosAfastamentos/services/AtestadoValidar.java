@@ -24,7 +24,7 @@ public class AtestadoValidar {
             throw new IllegalArgumentException("regras de status violada" + resultado );
         }
         Optional<Solicitacoes> atestado_existentes = solicitacoesRepository
-                .findFirstById_funcionario_IdAndId_tipo_IdAndStatusAndDataInicioAndDataFim(
+                .findFirstByIdFuncionario_IdAndId_tipo_IdAndStatusAndDataInicioAndDataFim(
                         idFuncionario,
                         id_tipo,
                         RegrasDeEnums.status.APROVADO,

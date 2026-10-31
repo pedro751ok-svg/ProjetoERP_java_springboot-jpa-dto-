@@ -11,5 +11,5 @@ import java.util.List;
 public interface FuncionarioBeneficioRepository extends JpaRepository<FuncionarioBeneficio, Long> {
 
     @Query("select fb.id_beneficio from FuncionarioBeneficio fb where fb.id_funcionario.id = :idFuncionario")
-    List<Beneficios> listarBeneficiosPorFuncionario(@Param("idFuncionario") long idFuncionario);
+    List<Beneficios> listarBeneficiosPorFuncionario(@Param("IdFuncionario") long IdFuncionario);
 }

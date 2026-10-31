@@ -5,6 +5,7 @@ import com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Model.Fo
 import com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Model.SalarioDescontado;
 import com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Repository.FolhaPagamentoRepository;
 import com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Repository.SalarioDescontadoRepository;
+import com.treinando_classes.demo.Shared.Funcionario;
 import org.hibernate.dialect.unique.CreateTableUniqueDelegate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -53,7 +54,7 @@ public class ServiceDescontoHorasPerdidas {
 
         SalarioDescontado registro = new SalarioDescontado();
         registro.setId_FolhaDePagamento(folha);
-        registro.setId_funcionario(folha.getId_funcionario());
+        registro.setFuncionario(folha.getId_funcionario());
         registro.setTotal_horas(DescontoTotal);
 
         return repository.save(registro);

@@ -10,5 +10,5 @@ import java.util.Optional;
 public interface AfastamentoRepository extends JpaRepository<Afastamento, Long> {
 
     @Query("select Af from Afastamento Af where Af.solicitacao_id.id_funcionario.id = :id_funcionario")
-    List<Afastamento>ListarAfastamentosPorFuncionario(@Param("id_funcionario")long id_funcionario);
+    List<Afastamento>ListarAfastamentosPorFuncionario(@Param("IdFuncionario")long IdFuncionario);
 }

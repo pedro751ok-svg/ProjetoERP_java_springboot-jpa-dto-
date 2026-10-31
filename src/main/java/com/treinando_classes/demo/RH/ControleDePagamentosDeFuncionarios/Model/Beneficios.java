@@ -1,6 +1,7 @@
 package com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Model;
 
 import com.treinando_classes.demo.RH.ControleDePagamentosDeFuncionarios.Domain.EnumBeneficios;
+import com.treinando_classes.demo.Shared.Funcionario;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -16,27 +17,31 @@ import java.time.LocalTime;
 @Entity
 public class Beneficios {
     @GeneratedValue
-    @Column
+    @Id
     private long id;
 
     @Column(nullable = false)
-    private String TipoDeBeneficio;
+    private String tipoDeBeneficio;
 
     @Column(nullable = false)
-    private EnumBeneficios.Periodicidade Periodicidade;
+    private EnumBeneficios.Periodicidade periodicidade;
 
     @Column(nullable = false)
-    private BigDecimal ValorDoBeneficio;
+    private BigDecimal valorDoBeneficio;
 
     @Column(nullable = false)
     private boolean Ativo;
 
     @Column
-    private String Fornecedor;
+    private String fornecedor;
 
     @Column
     private EnumBeneficios.Tipo_De_Calculo TipoDeCalculo;
 
     @Version
     private Long version;
+
+    @ManyToOne
+    @JoinColumn(name = "id_funcionario")
+    private Funcionario funcionario;
 }

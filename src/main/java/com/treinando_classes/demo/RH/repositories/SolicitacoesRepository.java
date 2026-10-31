@@ -9,8 +9,8 @@ import java.util.Optional;
 
 public interface SolicitacoesRepository extends JpaRepository<Solicitacoes, Long> {
     boolean existsById(long id);
-    Optional<Solicitacoes> findFirstById_funcionario_IdAndId_tipo_IdAndStatusAndDataInicioAndDataFim(
-            Long id_funcionario,
+    Optional<Solicitacoes> findFirstByIdFuncionario_IdAndId_tipo_IdAndStatusAndDataInicioAndDataFim(
+            Long IdFuncionario,
             Long id_tipo,
             RegrasDeEnums.status status,
             LocalDate DataInicio,

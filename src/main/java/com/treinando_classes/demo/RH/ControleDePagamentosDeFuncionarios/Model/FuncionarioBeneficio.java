@@ -19,7 +19,6 @@ import java.time.LocalDateTime;
 @Entity
 public class FuncionarioBeneficio {
     @GeneratedValue
-    @Column
     @Id
     private long id;
 

@@ -20,7 +20,7 @@ public class RegistrarAsalariado {
     public FolhaDePagamento RegistrarSalario(long id_funcionario, BigDecimal salario, BigDecimal totaldescontos, LocalTime horas_trabalhadas,
                                              LocalTime horas_extras, BigDecimal valor_ganho_por_hora, int mes, int dia){
 
-        Optional<FolhaDePagamento> folhaexistente = repository.findById_funcionario(id_funcionario);
+        Optional<FolhaDePagamento> folhaexistente = repository.findByIdFuncionario(id_funcionario);
 
         if(folhaexistente.isPresent()){
             throw new IllegalArgumentException("essa folha de pagamento ja pertence a um funcionario ");

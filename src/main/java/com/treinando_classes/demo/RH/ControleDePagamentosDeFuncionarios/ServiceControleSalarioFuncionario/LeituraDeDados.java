@@ -61,30 +61,29 @@ public class LeituraDeDados {
 
         return resultadoBuscaSalarioDescontado.get();
     }
-    public SalarioDescontado BuscarSalarioDescontadoPorFuncionario(long IdFuncionario) {
+    public List<SalarioDescontado>BuscarSalarioDescontadoPorFuncionario(long IdFuncionario) {
 
-        Optional<SalarioDescontado> resultadoDaBusca =
-                salarioDescontadoRepository.findById_funcionario(IdFuncionario);
+        List<SalarioDescontado> resultadoDaBusca =
+                salarioDescontadoRepository.findByFuncionario_Id(IdFuncionario);
 
         if (resultadoDaBusca.isEmpty()) {
             throw new IllegalArgumentException("Nenhum resultado para essa busca. Confirme o ID do funcionário");
         }
 
-        return resultadoDaBusca.get();
+        return resultadoDaBusca;
     }
 
-    public Beneficios BuscarBeneficioPorFuncionario(long IdFuncionario) {
-        Optional<Beneficios> ResultadoDaBuscaDeBeneficioPorFuncionario =
-                beneficiosRepository.findById_funcionario(IdFuncionario);
+    public List<Beneficios> BuscarBeneficioPorFuncionario(long IdFuncionario) {
+        List<Beneficios> ResultadoDaBuscaDeBeneficioPorFuncionario =
+                beneficiosRepository.findByFuncionario_Id(IdFuncionario);
         if(ResultadoDaBuscaDeBeneficioPorFuncionario.isEmpty()){
             throw new IllegalArgumentException("nenhum resultado para a busca de beneficio por funcionario encontrado");
         }
-        return ResultadoDaBuscaDeBeneficioPorFuncionario.get();
+        return ResultadoDaBuscaDeBeneficioPorFuncionario;
     }
-
     public FolhaDePagamento BuscarFolhaDePagamentoPorFuncionario(long IdFuncionario){
         Optional<FolhaDePagamento> ResultadoDaBuscaDaFolhaPorFuncionario =
-                folhaPagamentoRepository.findById_funcionario(IdFuncionario);
+                folhaPagamentoRepository.findByIdFuncionario(IdFuncionario);
         if(ResultadoDaBuscaDaFolhaPorFuncionario.isEmpty()){
             throw  new IllegalArgumentException("resultado da busca de folha de pagamento feito pelo id do funcionario" +
                     "nao encontrado");

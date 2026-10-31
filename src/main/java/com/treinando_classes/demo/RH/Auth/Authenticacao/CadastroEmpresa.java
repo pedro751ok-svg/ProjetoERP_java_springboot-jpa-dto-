@@ -33,8 +33,8 @@ public class CadastroEmpresa {
             }
             Empresa nova_empresa = Empresa.builder()
             .nome_empresa(nome)
-            .Cnpj(Cnpj)
-            .EmailCorporativo(EmailCorporativo)
+            .cnpj(Cnpj)
+            .emailCorporativo(EmailCorporativo)
             .senha(senha)
             .build();
 
