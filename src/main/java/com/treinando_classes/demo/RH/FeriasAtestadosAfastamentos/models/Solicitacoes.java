@@ -21,12 +21,12 @@ public class Solicitacoes {
     private RegrasDeEnums.status status = RegrasDeEnums.status.PENDENTE;
 
     @ManyToOne
-    @JoinColumn(name = "funcionario", referencedColumnName = "id")
-    private Funcionario id_funcionario;
+    @JoinColumn(name = "funcionario_id", referencedColumnName = "id")
+    private Funcionario funcionario;
 
     @OneToOne
     @JoinColumn(name = "id_tipo", referencedColumnName = "id")
-    private TipodeSolicitacao id_tipo;
+    private TipodeSolicitacao tipo;
 
     @ManyToOne
     @JoinColumn(name = "aceita_por_id", referencedColumnName = "id")
@@ -51,9 +51,9 @@ public class Solicitacoes {
     @Version
     private Long version;
 
-    private LocalDate DataInicio;
-    private LocalDate DataFim;
+    private LocalDate dataInicio;
+    private LocalDate dataFim;
 
-    private LocalDate AprovadoEm;
-    private LocalDate Reprovadoem;
+    private LocalDate aprovadoEm;
+    private LocalDate reprovadoem;
 }

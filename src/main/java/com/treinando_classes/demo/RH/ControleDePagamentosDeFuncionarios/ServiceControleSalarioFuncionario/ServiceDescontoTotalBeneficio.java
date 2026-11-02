@@ -89,7 +89,7 @@ public class ServiceDescontoTotalBeneficio {
 
         SalarioDescontado registro = new SalarioDescontado();
         registro.setId_FolhaDePagamento(folha);
-        registro.setFuncionario(folha.getId_funcionario());
+        registro.setFuncionario(folha.getFuncionario());
         registro.setTotal_beneficio(liquido);
 
         return salarioDescontadoRepository.save(registro);

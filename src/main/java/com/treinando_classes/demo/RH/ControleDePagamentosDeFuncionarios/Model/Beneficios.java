@@ -42,6 +42,6 @@ public class Beneficios {
     private Long version;
 
     @ManyToOne
-    @JoinColumn(name = "id_funcionario")
+    @JoinColumn(name = "funcionario_id")
     private Funcionario funcionario;
 }

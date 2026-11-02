@@ -32,8 +32,8 @@ public class FuncionarioBeneficio {
     private BigDecimal ValorEfetivo;
 
     @OneToOne
-    @JoinColumn(name = "id_funcinario",referencedColumnName = "id")
-    private Funcionario id_funcionario;
+    @JoinColumn(name = "funcionario_id",referencedColumnName = "id")
+    private Funcionario funcionario;
 
     @ManyToOne
     @JoinColumn(name = "id_beneficio", referencedColumnName = "id")

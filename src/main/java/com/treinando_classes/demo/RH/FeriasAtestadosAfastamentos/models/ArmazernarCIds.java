@@ -11,18 +11,18 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "cids armazenados")
+@Table(name = "cids_armazenados")
 public class ArmazernarCIds {
     @Id
     @GeneratedValue
     private long id;
 
-    @Column(nullable = false)
-    private String NumeroCid;
+    @Column(nullable = false,unique = true,length = 7)
+    private String numeroCid;
 
     @Column(nullable = false)
-    private String Categoria;
+    private String categoria;
 
-    @Column(nullable = false)
-    private String Descricao;
+    @Column(nullable = false,columnDefinition = "TEXT")
+    private String descricao;
 }

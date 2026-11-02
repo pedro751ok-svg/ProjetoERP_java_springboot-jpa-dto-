@@ -24,8 +24,8 @@ public class FolhaDePagamento {
     private long id;
 
     @OneToOne
-    @JoinColumn(name = "id_funcionario", referencedColumnName ="id")
-    private Funcionario id_funcionario;
+    @JoinColumn(name = "funcionario_id", referencedColumnName ="id")
+    private Funcionario funcionario;
 
     @Column(nullable = false)
     private BigDecimal Salario;

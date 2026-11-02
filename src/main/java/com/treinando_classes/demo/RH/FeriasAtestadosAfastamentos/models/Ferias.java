@@ -18,7 +18,7 @@ public class Ferias {
 
     @OneToOne
     @JoinColumn(name = "solicitacao_id",referencedColumnName = "id")
-    private Solicitacoes solicitacao_id;
+    private Solicitacoes solicitacao;
 
     private LocalDateTime data_inicio;
     private LocalDateTime data_fim;

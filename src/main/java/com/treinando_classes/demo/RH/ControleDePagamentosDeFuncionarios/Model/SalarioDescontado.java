@@ -25,7 +25,7 @@ public class SalarioDescontado {
     private FolhaDePagamento id_FolhaDePagamento;
 
     @OneToOne
-    @JoinColumn(name = "id_funcionario")
+    @JoinColumn(name = "funcionario_id")
     private Funcionario funcionario;
 
     @Column(nullable = false)

@@ -11,6 +11,6 @@ import java.util.Optional;
 public interface SalarioDescontadoRepository extends JpaRepository<SalarioDescontado , Long> {
     List<SalarioDescontado> findByFuncionario_Id(Long id);
 
-    @Query("select s from SalarioDescontado s where s.id_funcionario.id = :idFuncionario")
+    @Query("select s from SalarioDescontado s where s.funcionario.id = :idFuncionario")
     List<SalarioDescontado> listarPorFuncionario(@Param("IdFuncionario") long IdFuncionario);
 }

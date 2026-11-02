@@ -20,12 +20,12 @@ public class TipodeSolicitacao {
     private long id;
 
     @ManyToOne
-    @JoinColumn(name = "id_funcuionario" , referencedColumnName = "id")
+    @JoinColumn(name = "funcionario_id" , referencedColumnName = "id")
     private  Funcionario funcionario_id;
 
     @OneToOne
     @JoinColumn(name = "id_solicitacao", referencedColumnName = "id")
-    private Solicitacoes id_solicitacao;
+    private Solicitacoes solicitacao;
 
     @Column
     private RegrasDeEnums.MeioDeAfastamento tipo;

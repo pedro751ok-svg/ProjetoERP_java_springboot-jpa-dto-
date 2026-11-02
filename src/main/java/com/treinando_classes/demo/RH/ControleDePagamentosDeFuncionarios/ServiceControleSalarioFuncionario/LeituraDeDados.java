@@ -83,7 +83,7 @@ public class LeituraDeDados {
     }
     public FolhaDePagamento BuscarFolhaDePagamentoPorFuncionario(long IdFuncionario){
         Optional<FolhaDePagamento> ResultadoDaBuscaDaFolhaPorFuncionario =
-                folhaPagamentoRepository.findByIdFuncionario(IdFuncionario);
+                folhaPagamentoRepository.findByFuncionarioId(IdFuncionario);
         if(ResultadoDaBuscaDaFolhaPorFuncionario.isEmpty()){
             throw  new IllegalArgumentException("resultado da busca de folha de pagamento feito pelo id do funcionario" +
                     "nao encontrado");

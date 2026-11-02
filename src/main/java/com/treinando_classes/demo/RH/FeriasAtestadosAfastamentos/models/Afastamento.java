@@ -17,7 +17,7 @@ public class Afastamento{
 
     @OneToOne
     @JoinColumn(name = "id_solicitacoes")
-    private Solicitacoes id_solicitacoes;
+    private Solicitacoes solicitacao;
 
     @Column(nullable = false)
     private RegrasDeEnums.TipoInss motivo;

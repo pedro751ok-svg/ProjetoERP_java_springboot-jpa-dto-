@@ -40,7 +40,7 @@ public class GerenciadorDeSolicitacoes {
         }
 
             Optional<Solicitacoes> solicitacao = repository.
-                    findFirstByIdFuncionario_IdAndId_tipo_IdAndStatusAndDataInicioAndDataFim(
+                    findFirstByFuncionario_IdAndTipo_IdAndStatusAndDataInicioAndDataFim(
                             id_funcionario,
                             id_tipo,
                             status,
@@ -61,11 +61,11 @@ public class GerenciadorDeSolicitacoes {
                 .orElseThrow(() -> new IllegalArgumentException("funcionario nao encontrado"));
 
         Solicitacoes nova_solicitacao = Solicitacoes.builder()
-                .id_funcionario(funcionarioEncontrado)
-                .id_tipo(tipoEncontrado)
+                .funcionario(funcionarioEncontrado)
+                .tipo(tipoEncontrado)
                 .status(status)
-                .DataInicio(DataInicio)
-                .DataFim(DataFim)
+                .dataInicio(DataInicio)
+                .dataFim(DataFim)
                 .build();
 
         repository.save(nova_solicitacao);
@@ -77,19 +77,19 @@ public class GerenciadorDeSolicitacoes {
     private void _criar_registro_filho(RegrasDeEnums.MeioDeAfastamento tipo, Solicitacoes id_solicitacao ){
         if (tipo == RegrasDeEnums.MeioDeAfastamento.FERIAS) {
             Ferias ferias = Ferias.builder()
-                    .solicitacao_id(id_solicitacao)
+                    .solicitacao(id_solicitacao)
                     .build();
             feriasRepository.save(ferias);
         }
         if(tipo == RegrasDeEnums.MeioDeAfastamento.ATESTADO){
             Atestado atestado = Atestado.builder()
-                    .solicitacao_id(id_solicitacao)
+                    .solicitacao(id_solicitacao)
                     .build();
            atestadoRepository.save(atestado);
         }
         if(tipo == RegrasDeEnums.MeioDeAfastamento.AFASTAMENTO_INSS){
             Afastamento afastamento = Afastamento.builder()
-                    .id_solicitacoes(id_solicitacao)
+                    .solicitacao(id_solicitacao)
                     .build();
             afastamentoRepository.save(afastamento);
         }

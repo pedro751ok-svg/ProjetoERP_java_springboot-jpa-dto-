@@ -29,7 +29,7 @@ public class FeriasValidar {
         }
 
         Optional<Solicitacoes> ferias_existentes = solicitacoesRepository
-                .findFirstByIdFuncionario_IdAndId_tipo_IdAndStatusAndDataInicioAndDataFim(
+                .findFirstByFuncionario_IdAndTipo_IdAndStatusAndDataInicioAndDataFim(
                         idFuncionario,
                         id_tipo,
                         RegrasDeEnums.status.APROVADO,

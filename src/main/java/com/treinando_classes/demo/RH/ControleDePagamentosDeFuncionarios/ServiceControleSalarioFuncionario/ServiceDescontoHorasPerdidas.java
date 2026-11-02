@@ -54,7 +54,7 @@ public class ServiceDescontoHorasPerdidas {
 
         SalarioDescontado registro = new SalarioDescontado();
         registro.setId_FolhaDePagamento(folha);
-        registro.setFuncionario(folha.getId_funcionario());
+        registro.setFuncionario(folha.getFuncionario());
         registro.setTotal_horas(DescontoTotal);
 
         return repository.save(registro);
